@@ -5,7 +5,7 @@ import requests
 import time
 from PIL import Image, ImageDraw
 
-USER_RUN = True  # Imposta su False se vuoi che lo script faccia tutto da solo senza fermarsi
+USER_RUN = False  # Imposta su False se vuoi che lo script faccia tutto da solo senza fermarsi
 
 # 🛠️ IMPOSTA QUI L'ORDINE DELLE CATEGORIE COME PREFERISCI!
 # Le categorie non presenti in questa lista verranno accodate automaticamente alla fine.
@@ -100,7 +100,7 @@ def applica_fix_wikimedia(url):
 
 def elabora_m3u_e_genera_loghi():
     m3u_remote_url = "https://raw.githubusercontent.com/leanhhu061206/LIVETV/refs/heads/main/vavoo.m3u"
-    output_folder = "loghi_quadrati"
+    output_folder = "Loghi-Quadrati"
     output_m3u = "vavoo_quadrato.m3u"
     dimensione_quadrato = 600
     url_base_github = "https://raw.githubusercontent.com/wes1993/loghi-tv/refs/heads/main/Loghi-Quadrati/"
