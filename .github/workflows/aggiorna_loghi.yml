@@ -2,8 +2,7 @@ name: Aggiornamento Automatico Loghi M3U
 
 on:
   schedule:
-    # Gira automaticamente ogni giorno a mezzanotte (ora UTC)
-    - cron: '0 0 * * *'
+    - cron: '5 * * * *' 
   workflow_dispatch:
     # Ti permette di avviare lo script manualmente con un click dal sito di GitHub
 
