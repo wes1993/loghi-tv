@@ -2,7 +2,7 @@ name: Aggiornamento Automatico Loghi M3U
 
 on:
   schedule:
-    - cron: '5 * * * *' 
+    - cron: '20 * * * *' 
   workflow_dispatch:
     # Ti permette di avviare lo script manualmente con un click dal sito di GitHub
 
