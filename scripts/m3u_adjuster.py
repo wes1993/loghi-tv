@@ -9,7 +9,7 @@ USER_RUN = False  # Imposta su False se vuoi che lo script faccia tutto da solo 
 
 # 🛠️ IMPOSTA QUI L'ORDINE DELLE CATEGORIE COME PREFERISCI!
 # Le categorie non presenti in questa lista verranno accodate automaticamente alla fine.
-ORDINE_CATEGORIE = ["FILM - SERIE TV", "RAI", "NEWS"]
+ORDINE_CATEGORIE = ["SKY", "FILM - SERIE TV", "RAI", "NEWS"]
 
 
 def crea_sfondo_sfumato(dimensione):
@@ -241,6 +241,18 @@ def elabora_m3u_e_genera_loghi():
                 categorie_mappate[categoria_corrente] = []
             categorie_mappate[categoria_corrente].append((line, link_canale))
 
+            # 🟢 NUOVA LOGICA PER LA CATEGORIA SKY:
+            # Se il nome del canale contiene "SKY" (senza fare distinzione tra maiuscole e minuscole)
+            if "sky" in nome_canale.lower():
+                # Creiamo la categoria SKY nel dizionario se non esiste ancora
+                if "SKY" not in categorie_mappate:
+                    categorie_mappate["SKY"] = []
+                # Duplichiamo il canale anche dentro la categoria SKY
+                categorie_mappate["SKY"].append((line, link_canale))
+    
+
+
+    
     # --- RICOSTRUZIONE FILE ORDINATO ---
     linee_generate = list(linee_intestazione)
     
