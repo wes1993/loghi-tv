@@ -14,13 +14,18 @@ jobs:
       contents: write  # Permesso fondamentale per permettere all'Action di fare il push nel repo
 
     steps:
+    # 1. Checkout aggiornato all'ultima release compatibile con Node 24
     - name: Checkout del codice del repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
 
+    # 2. Setup Python aggiornato all'ultima release compatibile con Node 24
     - name: Configurazione di Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+        cache: 'pip' # Ottimizza i tempi di esecuzione memorizzando le librerie
 
     - name: Installazione delle dipendenze (Pillow e Requests)
       run: |
